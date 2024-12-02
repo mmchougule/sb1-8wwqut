@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    text-shadow: 0 0 #0ff;
+  }
+  20% {
+    transform: translate(-2px, 2px);
+    text-shadow: 2px 2px #0ff;
+  }
+  40% {
+    transform: translate(-2px, -2px);
+    text-shadow: 2px -2px #f0f;
+  }
+  60% {
+    transform: translate(2px, 2px);
+    text-shadow: -2px 2px #f0f;
+  }
+  80% {
+    transform: translate(2px, -2px);
+    text-shadow: -2px -2px #0ff;
+  }
+  100% {
+    transform: translate(0);
+    text-shadow: 0 0 #0ff;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-glitch {
+  animation: glitch 0.5s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
